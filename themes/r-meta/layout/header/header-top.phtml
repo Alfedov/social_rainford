@@ -8,9 +8,8 @@ if (mysqli_query($wo['sqlConnect'], "DESCRIBE `wondertage_settings`" )) {
 }
 ?>
 
-<div class="container">
-<nav class="navbar navbar-default">
-	<div class="container">
+<nav class="navbar navbar-default tag_navbar_top">
+	<div class="container-fluid">
 		<div class="valign tag_header full_width<?php if (!empty($wondertage_settings) && $wondertage_settings['tag_expand_search'] == 1) { ?> tag_expand_search<?php } ?>">
 			<button type="button" class="tag_toggle_sidebar" onclick="javascript:$('body').toggleClass('side_open');"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path fill="currentColor" d="M4 18h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zm0-5h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1s.45 1 1 1zM3 7c0 .55.45 1 1 1h16c.55 0 1-.45 1-1s-.45-1-1-1H4c-.55 0-1 .45-1 1z"/></svg></button>
 			<a class="header-brand" href="<?php echo $wo['config']['site_url']; ?>">
@@ -54,6 +53,7 @@ if (mysqli_query($wo['sqlConnect'], "DESCRIBE `wondertage_settings`" )) {
 	</div>
 	<div class="tag_header_shadow"></div>
 </nav>
+<div class="tag_navbar_top_right">
 <?php
 	if ($wo['loggedin'] == true) {
 		echo Wo_LoadPage('header/loggedin-header');

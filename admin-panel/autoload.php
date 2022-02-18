@@ -442,15 +442,15 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                             <div class="dropdown-menu dropdown-menu-right dropdown-menu-big">
                                 <div
                                     class="border-bottom px-4 py-3 text-center d-flex justify-content-between align-items-center">
-                                    <h5 class="mb-0">Notifications</h5>
+                                    <h5 class="mb-0">Уведомления</h5>
                                     <?php if ($notify_count > 0) { ?>
-                                    <small class="opacity-7"><?php echo $notify_count; ?>   unread notifications</small>
+                                    <small class="opacity-7"><?php echo $notify_count; ?>   непрочитанные уведомления</small>
                                     <?php } ?>
                                 </div>
                                 <div class="dropdown-scroll">
                                     <ul class="list-group list-group-flush">
                                         <?php if ($notify_count > 0) { ?>
-                                            <li class="px-4 py-2 text-center small text-muted bg-light">Unread Notifications</li>
+                                            <li class="px-4 py-2 text-center small text-muted bg-light">Непрочитанные уведомления</li>
                                             <?php if (!empty($notifications)) {
                                                     foreach ($notifications as $key => $notify) {
                                                         $page_ = '';
@@ -508,7 +508,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                             <?php } } ?>
                                         <?php } ?>
                                         <?php if ($notify_count == 0 && !empty($old_notifications)) { ?>
-                                            <li class="px-4 py-2 text-center small text-muted bg-light">Old Notifications</li>
+                                            <li class="px-4 py-2 text-center small text-muted bg-light">Старые уведомления</li>
                                             <?php
                                                     foreach ($old_notifications as $key => $notify) {
                                                         $page_ = '';
@@ -568,7 +568,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                 <div class="px-4 py-3 text-right border-top">
                                     <ul class="list-inline small">
                                         <li class="list-inline-item mb-0">
-                                            <a href="javascript:void(0)" onclick="ReadNotify()">Mark All Read</a>
+                                            <a href="javascript:void(0)" onclick="ReadNotify()">Отметить все как прочитанные</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -593,18 +593,18 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                                     </figure>
                                     <h5 class="text-center"><?php echo $wo['user']['name']; ?></h5>
                                     <div class="mb-3 small text-center text-muted"><?php echo $wo['user']['email']; ?></div>
-                                    <a href="<?php echo $wo['user']['url']; ?>" class="btn btn-outline-light btn-rounded">View Profile</a>
+                                    <a href="<?php echo $wo['user']['url']; ?>" class="btn btn-outline-light btn-rounded">Просмотреть профильe</a>
                                 </div>
                                 <div class="list-group">
-                                    <a href="<?php echo(Wo_Link('logout')) ?>" class="list-group-item text-danger">Sign Out!</a>
+                                    <a href="<?php echo(Wo_Link('logout')) ?>" class="list-group-item text-danger">Выход!</a>
                                     <?php if ($mode == 'night') { ?>
                                         <a href="javascript:void(0)" class="list-group-item admin_mode" onclick="ChangeMode('day')">
-                                            <span id="night-mode-text">Day mode</span>
+                                            <span id="night-mode-text">Дневной режим</span>
                                             <svg class="feather feather-moon float-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                                         </a>
                                     <?php }else{ ?>
                                         <a href="javascript:void(0)" class="list-group-item admin_mode" onclick="ChangeMode('night')">
-                                            <span id="night-mode-text">Night mode</span>
+                                            <span id="night-mode-text">Ночной режим</span>
                                             <svg class="feather feather-moon float-right" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
                                         </a>
                                     <?php } ?>
@@ -632,7 +632,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
         <!-- begin::navigation -->
         <div class="navigation">
             <div class="navigation-header">
-                <span>Navigation</span>
+                <span>Навигация</span>
                 <a href="#">
                     <i class="ti-close"></i>
                 </a>
@@ -645,7 +645,7 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                             <span class="nav-link-icon">
                                 <i class="material-icons">dashboard</i>
                             </span>
-                            <span>Dashboard</span>
+                            <span>Главная</span>
                         </a>
                     </li>
                     <?php } ?>
@@ -656,47 +656,47 @@ if (!empty($_COOKIE['mode']) && $_COOKIE['mode'] == 'night') {
                             <span class="nav-link-icon">
                                 <i class="material-icons">settings</i>
                             </span>
-                            <span>Settings</span>
+                            <span>Настройки</span>
                         </a>
                         <ul class="ml-menu">
                           <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['website_mode'] == 1)) { ?>
                           <li>
-                              <a <?php echo ($page == 'website_mode') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('website_mode'); ?>" data-ajax="?path=website_mode">Website Mode</a>
+                              <a <?php echo ($page == 'website_mode') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('website_mode'); ?>" data-ajax="?path=website_mode">Режим веб-сайта</a>
                           </li>
                           <?php } ?>
                             <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['general-settings'] == 1)) { ?>
                             <li>
-                                <a <?php echo ($page == 'general-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('general-settings'); ?>" data-ajax="?path=general-settings">General Configuration</a>
+                                <a <?php echo ($page == 'general-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('general-settings'); ?>" data-ajax="?path=general-settings">Общая конфигурация</a>
                             </li>
                             <?php } ?>
                             <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['site-settings'] == 1)) { ?>
                             <li>
-                                <a <?php echo ($page == 'site-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('site-settings'); ?>" data-ajax="?path=site-settings">Website Information</a>
+                                <a <?php echo ($page == 'site-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('site-settings'); ?>" data-ajax="?path=site-settings">Информация о сайте</a>
                             </li>
                             <?php } ?>
                             <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['amazon-settings'] == 1)) { ?>
                             <li>
-                                <a <?php echo ($page == 'amazon-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('amazon-settings'); ?>" data-ajax="?path=amazon-settings">File Upload Configuration</a>
+                                <a <?php echo ($page == 'amazon-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('amazon-settings'); ?>" data-ajax="?path=amazon-settings">Конфигурация загрузки файлов</a>
                             </li>
                             <?php } ?>
                             <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['email-settings'] == 1)) { ?>
                             <li>
-                                <a <?php echo ($page == 'email-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('email-settings'); ?>" data-ajax="?path=email-settings">E-mail & SMS Setup</a>
+                                <a <?php echo ($page == 'email-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('email-settings'); ?>" data-ajax="?path=email-settings">Настройка электронной почты и SMS</a>
                             </li>
                             <?php } ?>
                             <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['video-settings'] == 1)) { ?>
                             <li>
-                                <a <?php echo ($page == 'video-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('video-settings'); ?>" data-ajax="?path=video-settings">Chat & Video/Audio</a>
+                                <a <?php echo ($page == 'video-settings') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('video-settings'); ?>" data-ajax="?path=video-settings">Чат и видео/аудио</a>
                             </li>
                             <?php } ?>
                             <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['social-login'] == 1)) { ?>
                             <li>
-                                <a <?php echo ($page == 'social-login') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('social-login'); ?>" data-ajax="?path=social-login">Social Login Settings</a>
+                                <a <?php echo ($page == 'social-login') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('social-login'); ?>" data-ajax="?path=social-login">Настройки входа через социальные сети</a>
                             </li>
                             <?php } ?>
                             <?php if ($is_admin || ($is_moderoter && $wo['user']['permission']['node'] == 1)) { ?>
                             <li>
-                                <a <?php echo ($page == 'node') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('node'); ?>" data-ajax="?path=node">NodeJS Settings</a>
+                                <a <?php echo ($page == 'node') ? 'class="active"' : ''; ?> href="<?php echo Wo_LoadAdminLinkSettings('node'); ?>" data-ajax="?path=node">NodeJS Настройки</a>
                             </li>
                             <?php } ?>
 
