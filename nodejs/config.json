@@ -1,0 +1,8 @@
+{
+    "sql_db_host": "localhost",
+    "sql_db_user": "root",
+    "sql_db_pass": "root",
+    "sql_db_name": "x-meta",
+    "site_url": "http://x-meta.loc",
+    "purchase_code": ""
+}
