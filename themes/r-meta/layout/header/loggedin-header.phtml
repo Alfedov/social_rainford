@@ -158,33 +158,7 @@ if (mysqli_query($wo['sqlConnect'], "DESCRIBE `wondertage_settings`" )) {
 			<h2 class="tag_page_title m5 tag_mobi_hdr_not_title"><?php echo $wo['user']['name'] ?></h2>
 			<li>
 				<a href="<?php echo $wo['user']['url']; ?>" data-ajax="?link1=timeline&u=<?php echo $wo['user']['username'];?>"><img src="<?php echo $wo['user']['avatar'];?>" alt="<?php echo $wo['user']['name'];?>"> <?php echo $wo['lang']['my_profile']; ?></a>
-				<div class="valign tag_hdr_user_submenu">
-					<a href="<?php echo Wo_SeoLink('index.php?link1=wallet'); ?>" data-ajax="?link1=wallet" title="<?php echo $wo['lang']['wallet']; ?>" data-toggle="tooltip">
-						<?php if (!empty($wondertage_settings) && $wondertage_settings['tag_anron_ico_head'] == 1) { ?>
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M14.8 3.75C15.3724 3.75 15.7566 3.75058 16.0525 3.77476C16.3396 3.79822 16.4769 3.8401 16.5675 3.88624C16.8027 4.00608 16.9939 4.19731 17.1138 4.43251C17.1599 4.52307 17.2018 4.66036 17.2252 4.94748C17.2494 5.24336 17.25 5.62757 17.25 6.2V6.25L17.2321 6.25H17.2321L17.2 6.25H12H4C3.30964 6.25 2.75 5.69036 2.75 5C2.75 4.30965 3.30964 3.75 4 3.75H14.8ZM1.25 5C1.25 3.48122 2.48122 2.25 4 2.25H14.8H14.8304H14.8304C15.3646 2.24999 15.8104 2.24998 16.1747 2.27974C16.5546 2.31078 16.9112 2.37789 17.2485 2.54973C17.7659 2.81338 18.1866 3.23408 18.4503 3.75153C18.6221 4.08879 18.6892 4.44545 18.7203 4.82533C18.75 5.18956 18.75 5.6354 18.75 6.16955V6.2V6.26598C18.921 6.27229 19.0812 6.28109 19.2315 6.29336C19.7781 6.33803 20.2582 6.43239 20.7025 6.65873C21.4081 7.01825 21.9817 7.59193 22.3413 8.29754C22.5676 8.74176 22.662 9.2219 22.7066 9.76853C22.7404 10.1817 22.7479 10.6704 22.7495 11.25H21C19.4812 11.25 18.25 12.4812 18.25 14C18.25 15.5188 19.4812 16.75 21 16.75H22.7495C22.7479 17.3296 22.7404 17.8183 22.7066 18.2315C22.662 18.7781 22.5676 19.2582 22.3413 19.7025C21.9817 20.4081 21.4081 20.9818 20.7025 21.3413C20.2582 21.5676 19.7781 21.662 19.2315 21.7066C18.7006 21.75 18.045 21.75 17.2321 21.75H17.2H6.8H6.76788C5.95505 21.75 5.29944 21.75 4.76853 21.7066C4.2219 21.662 3.74175 21.5676 3.29754 21.3413C2.59193 20.9818 2.01825 20.4081 1.65873 19.7025C1.43239 19.2582 1.33803 18.7781 1.29336 18.2315C1.24999 17.7006 1.24999 17.0449 1.25 16.2321V16.2V5ZM22.75 12.75V15.25H21C20.3096 15.25 19.75 14.6904 19.75 14C19.75 13.3096 20.3096 12.75 21 12.75H22.75Z" fill="currentColor"/></svg> 
-						<?php } else { ?>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M10 16V8c0-1.1.89-2 2-2h9V5c0-1.1-.9-2-2-2H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-1h-9c-1.11 0-2-.9-2-2zm3-8c-.55 0-1 .45-1 1v6c0 .55.45 1 1 1h9V8h-9zm3 5.5c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg> 
-						<?php } ?>
-						<?php echo Wo_GetCurrency($wo['config']['ads_currency']); ?><?php echo sprintf('%.2f',$wo['user']['wallet']);?>
-					</a>
-					<?php if ($wo['config']['point_level_system'] == 1) { ?>
-						<a href="<?php echo Wo_SeoLink('index.php?link1=setting&page=my_points'); ?>" data-ajax="?link1=setting&page=my_points" title="<?php echo $wo['lang']['points']; ?>" data-toggle="tooltip">
-							<?php if (!empty($wondertage_settings) && $wondertage_settings['tag_anron_ico_head'] == 1) { ?>
-								<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M18 8C18 11.3137 15.3137 14 12 14C8.68629 14 6 11.3137 6 8C6 4.68629 8.68629 2 12 2C15.3137 2 18 4.68629 18 8ZM13.9932 14.7121C13.3615 14.8995 12.6925 15 12 15C8.71646 15 5.96095 12.7392 5.2052 9.6893C3.29924 10.6944 2 12.6955 2 15C2 18.3137 4.68629 21 8 21C11.3137 21 14 18.3137 14 15C14 14.9035 13.9977 14.8075 13.9932 14.7121ZM14.9693 14.3408C16.8562 13.4557 18.2833 11.7532 18.7948 9.68929C20.7007 10.6944 22 12.6955 22 15C22 18.3137 19.3137 21 16 21C14.8285 21 13.7355 20.6643 12.8119 20.0839C14.1594 18.808 15 17.0022 15 15C15 14.7777 14.9896 14.5578 14.9693 14.3408Z" fill="currentColor"/></svg> 
-							<?php } else { ?>
-								<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 5C7.031 5 2 6.546 2 9.5S7.031 14 12 14c4.97 0 10-1.546 10-4.5S16.97 5 12 5zM7 14.938v3c1.237.299 2.605.482 4 .541v-3C9.605 15.419 8.237 15.236 7 14.938zM13 15.478v3c1.395-.059 2.764-.242 4-.541v-3C15.764 15.236 14.395 15.419 13 15.478zM19 14.297v3c1.801-.755 3-1.857 3-3.297v-3C22 12.44 20.801 13.542 19 14.297zM5 17.297v-3C3.2 13.542 2 12.439 2 11v3C2 15.439 3.2 16.542 5 17.297z"/></svg> 
-							<?php } ?>
-							<?php echo $wo['user']['points'];?>
-						</a>
-					<?php } ?>
-					<?php if ($wo['config']['poke_system'] == 1) { ?>
-						<a href="<?php echo Wo_SeoLink('index.php?link1=poke');?>" data-ajax="?link1=poke">
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M21,9A1,1 0 0,1 22,10A1,1 0 0,1 21,11H16.53L16.4,12.21L14.2,17.15C14,17.65 13.47,18 12.86,18H8.5C7.7,18 7,17.27 7,16.5V10C7,9.61 7.16,9.26 7.43,9L11.63,4.1L12.4,4.84C12.6,5.03 12.72,5.29 12.72,5.58L12.69,5.8L11,9H21M2,18V10H5V18H2Z"/></svg> <?php echo $wo['lang']['pokes']; ?>
-						</a>
-					<?php } ?>
-				</div>
 			</li>
-			<hr class="style-two">
 			<?php 
 			if ($wo['config']['pro'] == 1) {
 			if (Wo_IsUserPro() === false) { ?>
@@ -258,27 +232,6 @@ if (mysqli_query($wo['sqlConnect'], "DESCRIBE `wondertage_settings`" )) {
 					<?php echo $wo['lang']['general_setting']; ?>
 				</a>
 			</li>
-			<?php if ($wo['config']['user_registration'] == 1): ?>
-				<li>
-					<a class="not_hide" href="#collapseInvite" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="collapseInvite">
-						<?php if (!empty($wondertage_settings) && $wondertage_settings['tag_anron_ico_head'] == 1) { ?>
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M2.43597 6.18404C2 7.03969 2 8.15979 2 10.4V13.6C2 15.8402 2 16.9603 2.43597 17.816C2.81947 18.5686 3.43139 19.1805 4.18404 19.564C5.03969 20 6.15979 20 8.4 20H15.6C17.8402 20 18.9603 20 19.816 19.564C20.5686 19.1805 21.1805 18.5686 21.564 17.816C22 16.9603 22 15.8402 22 13.6V10.4C22 8.15979 22 7.03969 21.564 6.18404C21.1805 5.43139 20.5686 4.81947 19.816 4.43597C18.9603 4 17.8402 4 15.6 4H8.4C6.15979 4 5.03969 4 4.18404 4.43597C3.43139 4.81947 2.81947 5.43139 2.43597 6.18404ZM6.41603 7.37596C6.07138 7.1462 5.60573 7.23933 5.37596 7.58397C5.1462 7.92862 5.23933 8.39427 5.58397 8.62404L11.584 12.624C11.8359 12.792 12.1641 12.792 12.416 12.624L18.416 8.62404C18.7607 8.39427 18.8538 7.92862 18.624 7.58397C18.3943 7.23933 17.9286 7.1462 17.584 7.37596L12 11.0986L6.41603 7.37596Z" fill="currentColor"/></svg> 
-						<?php } else { ?>
-							<svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0V0z" fill="none"/><path fill="currentColor" d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-.4 4.25l-6.54 4.09c-.65.41-1.47.41-2.12 0L4.4 8.25c-.25-.16-.4-.43-.4-.72 0-.67.73-1.07 1.3-.72L12 11l6.7-4.19c.57-.35 1.3.05 1.3.72 0 .29-.15.56-.4.72z"/></svg> 
-						<?php } ?>
-						<?php echo $wo['lang']['invite_your_frineds_home']; ?>
-					</a>
-					<div class="collapse" id="collapseInvite">
-						<form action="#" method="post" class="invite-user-form">
-							<div class="invite-user-form-alert"></div>
-							<div class="valign invite-user-combine">
-								<input type="text" name="email" placeholder="<?php echo $wo['lang']['email']; ?>" class="form-control">
-								<button class="btn btn-mat btn-main" title="<?php echo $wo['lang']['send_invitation']; ?>"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M3.4 20.4l17.45-7.48c.81-.35.81-1.49 0-1.84L3.4 3.6c-.66-.29-1.39.2-1.39.91L2 9.12c0 .5.37.93.87.99L17 12 2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z" /></svg></button>
-							</div>
-						</form>
-					</div>
-				</li>
-			<?php endif ?>
 			<hr class="style-two">
 			<li>
 				<?php if (!empty($wondertage_settings) && $wondertage_settings['tag_auto_dark'] == 1) { ?>
@@ -310,18 +263,6 @@ if (mysqli_query($wo['sqlConnect'], "DESCRIBE `wondertage_settings`" )) {
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M19 3H5C3.897 3 3 3.897 3 5v4h10 2 6V5C21 3.897 20.103 3 19 3zM3 19c0 1.103.897 2 2 2h8V11H3V19zM15 21h4c1.103 0 2-.897 2-2v-8h-6V21z" /></svg> 
 						<?php } ?>
 						<?php echo $wo['lang']['admin_area']; ?>
-					</a>
-				</li>
-			<?php } ?>
-			<?php if(Wo_IsAdmin()) { ?>
-				<li>
-					<a href="#" data-toggle="modal" data-target="#tag_settings">
-						<?php if (!empty($wondertage_settings) && $wondertage_settings['tag_anron_ico_head'] == 1) { ?>
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M4.25 3.98932C4.25 2.47644 5.47644 1.25 6.98932 1.25H9H13H17.0107C18.5236 1.25 19.75 2.47644 19.75 3.98932V10V10.9203C19.75 12.474 18.9348 13.9137 17.6026 14.7131L15.9609 15.6981C15.2748 16.1098 14.9102 16.8992 15.0418 17.6885L15.2466 18.9175C15.581 20.9237 14.0339 22.75 12 22.75C9.96613 22.75 8.41903 20.9237 8.7534 18.9175L8.95825 17.6885C9.08979 16.8992 8.72525 16.1098 8.03913 15.6981L6.39743 14.7131C5.06517 13.9137 4.25 12.474 4.25 10.9203V10V3.98932ZM18.25 9.25H5.75V3.98932C5.75 3.30486 6.30486 2.75 6.98932 2.75H8.25V6C8.25 6.41421 8.58579 6.75 9 6.75C9.41421 6.75 9.75 6.41421 9.75 6V2.75H12.25V4C12.25 4.41421 12.5858 4.75 13 4.75C13.4142 4.75 13.75 4.41421 13.75 4V2.75H17.0107C17.6951 2.75 18.25 3.30486 18.25 3.98932V9.25Z" fill="currentColor"/></svg> 
-						<?php } else { ?>
-							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01-.23-.26-.38-.61-.38-.99 0-.83.67-1.5 1.5-1.5H16c2.76 0 5-2.24 5-5 0-4.42-4.03-8-9-8zm-5.5 9c-.83 0-1.5-.67-1.5-1.5S5.67 9 6.5 9 8 9.67 8 10.5 7.33 12 6.5 12zm3-4C8.67 8 8 7.33 8 6.5S8.67 5 9.5 5s1.5.67 1.5 1.5S10.33 8 9.5 8zm5 0c-.83 0-1.5-.67-1.5-1.5S13.67 5 14.5 5s1.5.67 1.5 1.5S15.33 8 14.5 8zm3 4c-.83 0-1.5-.67-1.5-1.5S16.67 9 17.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" /></svg> 
-						<?php } ?>
-						Theme Options
 					</a>
 				</li>
 			<?php } ?>
