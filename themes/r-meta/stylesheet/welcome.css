@@ -17,8 +17,8 @@ button, input, optgroup, select, textarea {color: inherit;}
 .btn {font-size: 14px;}
 .btn.focus, .btn:focus {box-shadow: none;}
 .btn-default {background: #ebeef0;border:0}
-.btn-main, .btn-main-rev:hover {color: var(--main-color);background-color: var(--main);}
-.btn-main:hover, .btn-main:focus, .btn-main-rev:focus {color: var(--main-hover-color);background-color: var(--main-hover);}
+.btn-main, .btn-main-rev:hover {color: var(--main-color);background-color: #FFA500;}
+.btn-main:hover, .btn-main:focus, .btn-main-rev:focus {color: var(--main-hover-color);background-color: #FFA500;}
 .btn-main-rev {color: var(--main);transition: all 0.2s ease;}
 .btn-main-rev::before {content: "";position: absolute;left: 0;right: 0;top: 0;bottom: 0;background-color: currentColor;opacity: 0.2;transition: all 0.2s ease;}
 .btn-main-rev:hover::before, .btn-main-rev:focus::before {opacity: 0;}
