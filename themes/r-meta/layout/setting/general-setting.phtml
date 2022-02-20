@@ -164,10 +164,6 @@
 					<span><?php echo $wo['lang']['member_type']; ?></span>
 				</label>
 			<?php } ?>
-			<label class="tag_field">
-				<input name="wallet" id="wallet" type="text" placeholder=" " value="<?php echo $wo['setting']['wallet']?>" autocomplete="off">
-				<span><?php echo $wo['lang']['wallet']; ?></span>
-			</label>
 		<?php } ?>
 
 		<?php if ($wo['config']['pro'] == 1 && $wo['setting']['pro_type'] != 0 && $wo['setting']['is_pro'] == 1 && empty($_GET['user'])) { ?>

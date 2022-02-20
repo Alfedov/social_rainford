@@ -7,7 +7,7 @@ $themeAuthor = 'ParkerDev';
 
 $themeAuthorUrl = 'https://vk.com/alfedovdev';
 
-$themeVirsion = '1.0';
+$themeVirsion = '1.3';
 
 $themeImg = $themeFolder . '';
 ?>
